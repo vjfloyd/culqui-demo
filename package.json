@@ -1,0 +1,17 @@
+{
+  "name": "culqui-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Victor>",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.3.8",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.11.14"
+  },
+  "devDependencies": {
+    "serverless-offline": "^10.3.2",
+    "serverless-plugin-typescript": "^1.1.9",
+    "typescript": "^4.1.3"
+  }
+}

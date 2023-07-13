@@ -1,0 +1,28 @@
+service: serverless-mongodb
+provider:
+  name: aws
+  runtime: nodejs12.x # set node.js runtime
+  memorySize: 128 # set the maximum memory of the Lambdas in Megabytes
+  timeout: 10 # the timeout is 10 seconds (default is 6 seconds)
+  stage: dev # setting the env stage to dev, this will be visible in the routes
+  region: us-east-1
+
+functions: # add 4 functions for CRUD
+  create:
+    handler: src/functions/handler.create # point to exported create function in handler.ts
+    events:
+      - http:
+          path: tokens
+          method: post
+          cors: true
+  getOne:
+    handler: src/functions/handler.getOne
+    events:
+      - http:
+          path: cards/{id}
+          method: get
+          cors: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline

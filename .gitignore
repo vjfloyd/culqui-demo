@@ -1,0 +1,6 @@
+variables.env
+.idea/
+yarn-error.log
+.serverless/
+node_modules/
+.build/
